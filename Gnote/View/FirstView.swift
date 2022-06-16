@@ -15,7 +15,7 @@ struct FirstView: View {
     var date = Date()
     var array2 = ["Breast", "Back", "Legs", "Shoulders", "Biceps", "Triceps", "Abs"]
     var array = ["bench press", "incline bench press", "push-ups", "dumbbells", "dips"]
-    
+    //ZXx
     var body: some View {
         ZStack(alignment: .bottom){
             VStack {
