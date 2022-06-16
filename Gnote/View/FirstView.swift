@@ -13,7 +13,6 @@ struct FirstView: View {
     @State var showView: Bool = false
     @State var moveToMainView: Bool = false
     var date = Date()
-    //qdsas aadcasca
     var array2 = ["Breast", "Back", "Legs", "Shoulders", "Biceps", "Triceps", "Abs"]
     var array = ["bench press", "incline bench press", "push-ups", "dumbbells", "dips"]
     
