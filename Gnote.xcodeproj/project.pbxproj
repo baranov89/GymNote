@@ -27,6 +27,7 @@
 		4EC5A19A28185F7B000F814B /* UpperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A19928185F7B000F814B /* UpperView.swift */; };
 		4ECF63422823E3EC00A6A625 /* ExerciseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF63412823E3EC00A6A625 /* ExerciseItemView.swift */; };
 		791823642843E76E006A6E80 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791823632843E76E006A6E80 /* KeyboardView.swift */; };
+		79EAFB70285B923400545C5A /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EAFB6F285B923400545C5A /* SecondView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		4EC5A19928185F7B000F814B /* UpperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperView.swift; sourceTree = "<group>"; };
 		4ECF63412823E3EC00A6A625 /* ExerciseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItemView.swift; sourceTree = "<group>"; };
 		791823632843E76E006A6E80 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		79EAFB6F285B923400545C5A /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				4E9F6B0327FE103B00B5AD29 /* CoreDataManager.swift */,
+				79EAFB6F285B923400545C5A /* SecondView.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				4E1B33EC2815C44C005DEABD /* CustomTabBarCintainerView.swift in Sources */,
 				4E9F6B0427FE103B00B5AD29 /* CoreDataManager.swift in Sources */,
 				4E9F6B0627FF59DC00B5AD29 /* CoreDataRaelationShipViewModel.swift in Sources */,
+				79EAFB70285B923400545C5A /* SecondView.swift in Sources */,
 				4E7F250F2816E27A0051BA59 /* TabBarItem.swift in Sources */,
 				4E39B563280F3C6E006A5AD1 /* CustomTabBarView.swift in Sources */,
 				4E9F6B0227FE03FF00B5AD29 /* DataBase.xcdatamodeld in Sources */,
