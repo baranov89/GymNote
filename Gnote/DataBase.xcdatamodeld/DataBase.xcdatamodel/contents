@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CardioSet" representedClassName="CardioSet" syncable="YES" codeGenerationType="class">
+        <attribute name="comment" optional="YES" attributeType="String"/>
+        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="setting" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="slope" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="speed" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="exerciseRS" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="cardioSetRS" inverseEntity="Exercise"/>
+    </entity>
+    <entity name="Exercise" representedClassName="Exercise" syncable="YES" codeGenerationType="class">
+        <attribute name="comment" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="number" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="cardioSetRS" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CardioSet" inverseName="exerciseRS" inverseEntity="CardioSet"/>
+        <relationship name="muscleGroupRS" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MuscleGroup" inverseName="exerciseRS" inverseEntity="MuscleGroup"/>
+        <relationship name="powerSetRS" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PowerSet" inverseName="exerciseRS" inverseEntity="PowerSet"/>
+    </entity>
+    <entity name="ExerciseList" representedClassName="ExerciseList" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="muscleGroupListRS" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MuscleGroupList" inverseName="exerciseListRS" inverseEntity="MuscleGroupList"/>
+    </entity>
+    <entity name="MuscleGroup" representedClassName="MuscleGroup" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="exerciseRS" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Exercise" inverseName="muscleGroupRS" inverseEntity="Exercise"/>
+        <relationship name="workOutRS" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkOut" inverseName="muscleGroupRS" inverseEntity="WorkOut"/>
+    </entity>
+    <entity name="MuscleGroupList" representedClassName="MuscleGroupList" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="exerciseListRS" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ExerciseList" inverseName="muscleGroupListRS" inverseEntity="ExerciseList"/>
+        <relationship name="workOutRS" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkOut" inverseName="muscleGroupListRS" inverseEntity="WorkOut"/>
+    </entity>
+    <entity name="PowerSet" representedClassName="PowerSet" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="repeats" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="set" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="weight" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="exerciseRS" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="powerSetRS" inverseEntity="Exercise"/>
+    </entity>
+    <entity name="WorkOut" representedClassName="WorkOut" syncable="YES" codeGenerationType="class">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="muscleGroupListRS" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MuscleGroupList" inverseName="workOutRS" inverseEntity="MuscleGroupList"/>
+        <relationship name="muscleGroupRS" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MuscleGroup" inverseName="workOutRS" inverseEntity="MuscleGroup"/>
+    </entity>
+    <elements>
+        <element name="CardioSet" positionX="18" positionY="63" width="128" height="164"/>
+        <element name="Exercise" positionX="0" positionY="45" width="128" height="134"/>
+        <element name="ExerciseList" positionX="-18" positionY="99" width="128" height="59"/>
+        <element name="MuscleGroup" positionX="-36" positionY="9" width="128" height="89"/>
+        <element name="MuscleGroupList" positionX="-18" positionY="99" width="128" height="74"/>
+        <element name="PowerSet" positionX="-18" positionY="27" width="128" height="119"/>
+        <element name="WorkOut" positionX="-54" positionY="-9" width="128" height="104"/>
+    </elements>
+</model>

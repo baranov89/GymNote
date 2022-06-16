@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E0F1D90281C215300C3F441 /* TrainigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0F1D8F281C215300C3F441 /* TrainigView.swift */; };
+		4E0F1D92281C295F00C3F441 /* TrainingViewMusclGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0F1D91281C295F00C3F441 /* TrainingViewMusclGroup.swift */; };
+		4E1B33EC2815C44C005DEABD /* CustomTabBarCintainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B33EB2815C44C005DEABD /* CustomTabBarCintainerView.swift */; };
+		4E25194B282AC575008F4BAE /* SetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E25194A282AC575008F4BAE /* SetView.swift */; };
+		4E39B563280F3C6E006A5AD1 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E39B562280F3C6E006A5AD1 /* CustomTabBarView.swift */; };
+		4E69394E28049B9B00554B66 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E69394D28049B9B00554B66 /* FirstView.swift */; };
+		4E6B49D12822997A00CB5002 /* MusclGroupSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B49D02822997A00CB5002 /* MusclGroupSelectionView.swift */; };
+		4E7ABA8E280740B400333E59 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7ABA8D280740B400333E59 /* MainView.swift */; };
+		4E7ABA942808346500333E59 /* WorkoutSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7ABA932808346500333E59 /* WorkoutSelectionView.swift */; };
+		4E7F250D2816DAF70051BA59 /* TapBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7F250C2816DAF70051BA59 /* TapBarItemsPreferenceKey.swift */; };
+		4E7F250F2816E27A0051BA59 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7F250E2816E27A0051BA59 /* TabBarItem.swift */; };
+		4E9F6AEF27FE030500B5AD29 /* GnoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9F6AEE27FE030500B5AD29 /* GnoteApp.swift */; };
+		4E9F6AF327FE030600B5AD29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E9F6AF227FE030600B5AD29 /* Assets.xcassets */; };
+		4E9F6AF627FE030600B5AD29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E9F6AF527FE030600B5AD29 /* Preview Assets.xcassets */; };
+		4E9F6B0227FE03FF00B5AD29 /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E9F6B0027FE03FF00B5AD29 /* DataBase.xcdatamodeld */; };
+		4E9F6B0427FE103B00B5AD29 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9F6B0327FE103B00B5AD29 /* CoreDataManager.swift */; };
+		4E9F6B0627FF59DC00B5AD29 /* CoreDataRaelationShipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9F6B0527FF59DC00B5AD29 /* CoreDataRaelationShipViewModel.swift */; };
+		4EC5A19A28185F7B000F814B /* UpperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A19928185F7B000F814B /* UpperView.swift */; };
+		4ECF63422823E3EC00A6A625 /* ExerciseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF63412823E3EC00A6A625 /* ExerciseItemView.swift */; };
+		791823642843E76E006A6E80 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791823632843E76E006A6E80 /* KeyboardView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4E0F1D8F281C215300C3F441 /* TrainigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainigView.swift; sourceTree = "<group>"; };
+		4E0F1D91281C295F00C3F441 /* TrainingViewMusclGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewMusclGroup.swift; sourceTree = "<group>"; };
+		4E1B33EB2815C44C005DEABD /* CustomTabBarCintainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarCintainerView.swift; sourceTree = "<group>"; };
+		4E25194A282AC575008F4BAE /* SetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetView.swift; sourceTree = "<group>"; };
+		4E39B562280F3C6E006A5AD1 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
+		4E69394D28049B9B00554B66 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		4E6B49D02822997A00CB5002 /* MusclGroupSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclGroupSelectionView.swift; sourceTree = "<group>"; };
+		4E7ABA8D280740B400333E59 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4E7ABA932808346500333E59 /* WorkoutSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSelectionView.swift; sourceTree = "<group>"; };
+		4E7F250C2816DAF70051BA59 /* TapBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
+		4E7F250E2816E27A0051BA59 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		4E9F6AEB27FE030500B5AD29 /* Gnote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gnote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E9F6AEE27FE030500B5AD29 /* GnoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GnoteApp.swift; sourceTree = "<group>"; };
+		4E9F6AF227FE030600B5AD29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4E9F6AF527FE030600B5AD29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4E9F6AF727FE030600B5AD29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E9F6B0127FE03FF00B5AD29 /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
+		4E9F6B0327FE103B00B5AD29 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		4E9F6B0527FF59DC00B5AD29 /* CoreDataRaelationShipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRaelationShipViewModel.swift; sourceTree = "<group>"; };
+		4EC5A19928185F7B000F814B /* UpperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperView.swift; sourceTree = "<group>"; };
+		4ECF63412823E3EC00A6A625 /* ExerciseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItemView.swift; sourceTree = "<group>"; };
+		791823632843E76E006A6E80 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4E9F6AE827FE030500B5AD29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E69394A28020A4100554B66 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4E9F6B0527FF59DC00B5AD29 /* CoreDataRaelationShipViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4E69394B28020A5B00554B66 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				4E9F6B0327FE103B00B5AD29 /* CoreDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		4E69394C28020A8B00554B66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4E69394D28049B9B00554B66 /* FirstView.swift */,
+				4E7ABA8D280740B400333E59 /* MainView.swift */,
+				4E1B33EB2815C44C005DEABD /* CustomTabBarCintainerView.swift */,
+				4E39B562280F3C6E006A5AD1 /* CustomTabBarView.swift */,
+				4E7F250C2816DAF70051BA59 /* TapBarItemsPreferenceKey.swift */,
+				4E7F250E2816E27A0051BA59 /* TabBarItem.swift */,
+				79104119284A95D500C51528 /* TrainingView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4E9F6AE227FE030500B5AD29 = {
+			isa = PBXGroup;
+			children = (
+				4E9F6AED27FE030500B5AD29 /* Gnote */,
+				4E9F6AEC27FE030500B5AD29 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4E9F6AEC27FE030500B5AD29 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E9F6AEB27FE030500B5AD29 /* Gnote.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E9F6AED27FE030500B5AD29 /* Gnote */ = {
+			isa = PBXGroup;
+			children = (
+				4E9F6AEE27FE030500B5AD29 /* GnoteApp.swift */,
+				4E69394A28020A4100554B66 /* ViewModel */,
+				4E69394B28020A5B00554B66 /* DataManager */,
+				4E69394C28020A8B00554B66 /* View */,
+				4E9F6AF227FE030600B5AD29 /* Assets.xcassets */,
+				4E9F6AF727FE030600B5AD29 /* Info.plist */,
+				4E9F6B0027FE03FF00B5AD29 /* DataBase.xcdatamodeld */,
+				4E9F6AF427FE030600B5AD29 /* Preview Content */,
+			);
+			path = Gnote;
+			sourceTree = "<group>";
+		};
+		4E9F6AF427FE030600B5AD29 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4E9F6AF527FE030600B5AD29 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		79104119284A95D500C51528 /* TrainingView */ = {
+			isa = PBXGroup;
+			children = (
+				4E0F1D91281C295F00C3F441 /* TrainingViewMusclGroup.swift */,
+				4ECF63412823E3EC00A6A625 /* ExerciseItemView.swift */,
+				4E25194A282AC575008F4BAE /* SetView.swift */,
+				791823632843E76E006A6E80 /* KeyboardView.swift */,
+				4E0F1D8F281C215300C3F441 /* TrainigView.swift */,
+				4EC5A19928185F7B000F814B /* UpperView.swift */,
+				4E6B49D02822997A00CB5002 /* MusclGroupSelectionView.swift */,
+				4E7ABA932808346500333E59 /* WorkoutSelectionView.swift */,
+			);
+			path = TrainingView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4E9F6AEA27FE030500B5AD29 /* Gnote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E9F6AFA27FE030600B5AD29 /* Build configuration list for PBXNativeTarget "Gnote" */;
+			buildPhases = (
+				4E9F6AE727FE030500B5AD29 /* Sources */,
+				4E9F6AE827FE030500B5AD29 /* Frameworks */,
+				4E9F6AE927FE030500B5AD29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gnote;
+			productName = Gnote;
+			productReference = 4E9F6AEB27FE030500B5AD29 /* Gnote.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E9F6AE327FE030500B5AD29 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					4E9F6AEA27FE030500B5AD29 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 4E9F6AE627FE030500B5AD29 /* Build configuration list for PBXProject "Gnote" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4E9F6AE227FE030500B5AD29;
+			productRefGroup = 4E9F6AEC27FE030500B5AD29 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E9F6AEA27FE030500B5AD29 /* Gnote */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4E9F6AE927FE030500B5AD29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E9F6AF627FE030600B5AD29 /* Preview Assets.xcassets in Resources */,
+				4E9F6AF327FE030600B5AD29 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E9F6AE727FE030500B5AD29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E7ABA8E280740B400333E59 /* MainView.swift in Sources */,
+				4E69394E28049B9B00554B66 /* FirstView.swift in Sources */,
+				4E0F1D92281C295F00C3F441 /* TrainingViewMusclGroup.swift in Sources */,
+				791823642843E76E006A6E80 /* KeyboardView.swift in Sources */,
+				4E25194B282AC575008F4BAE /* SetView.swift in Sources */,
+				4ECF63422823E3EC00A6A625 /* ExerciseItemView.swift in Sources */,
+				4E9F6AEF27FE030500B5AD29 /* GnoteApp.swift in Sources */,
+				4E7F250D2816DAF70051BA59 /* TapBarItemsPreferenceKey.swift in Sources */,
+				4E0F1D90281C215300C3F441 /* TrainigView.swift in Sources */,
+				4E1B33EC2815C44C005DEABD /* CustomTabBarCintainerView.swift in Sources */,
+				4E9F6B0427FE103B00B5AD29 /* CoreDataManager.swift in Sources */,
+				4E9F6B0627FF59DC00B5AD29 /* CoreDataRaelationShipViewModel.swift in Sources */,
+				4E7F250F2816E27A0051BA59 /* TabBarItem.swift in Sources */,
+				4E39B563280F3C6E006A5AD1 /* CustomTabBarView.swift in Sources */,
+				4E9F6B0227FE03FF00B5AD29 /* DataBase.xcdatamodeld in Sources */,
+				4EC5A19A28185F7B000F814B /* UpperView.swift in Sources */,
+				4E6B49D12822997A00CB5002 /* MusclGroupSelectionView.swift in Sources */,
+				4E7ABA942808346500333E59 /* WorkoutSelectionView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4E9F6AF827FE030600B5AD29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4E9F6AF927FE030600B5AD29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4E9F6AFB27FE030600B5AD29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Gnote/Preview Content\"";
+				DEVELOPMENT_TEAM = 5HDJ6MMFHG;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Gnote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = qqq.Gnote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4E9F6AFC27FE030600B5AD29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Gnote/Preview Content\"";
+				DEVELOPMENT_TEAM = 5HDJ6MMFHG;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Gnote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = qqq.Gnote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4E9F6AE627FE030500B5AD29 /* Build configuration list for PBXProject "Gnote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E9F6AF827FE030600B5AD29 /* Debug */,
+				4E9F6AF927FE030600B5AD29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E9F6AFA27FE030600B5AD29 /* Build configuration list for PBXNativeTarget "Gnote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E9F6AFB27FE030600B5AD29 /* Debug */,
+				4E9F6AFC27FE030600B5AD29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4E9F6B0027FE03FF00B5AD29 /* DataBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4E9F6B0127FE03FF00B5AD29 /* DataBase.xcdatamodel */,
+			);
+			currentVersion = 4E9F6B0127FE03FF00B5AD29 /* DataBase.xcdatamodel */;
+			path = DataBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4E9F6AE327FE030500B5AD29 /* Project object */;
+}
