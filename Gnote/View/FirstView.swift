@@ -39,9 +39,7 @@ struct FirstView: View {
                 Button {
                     vm.getAllWorkOut()
                     vm.workOutCurrent = vm.workOutArray.last
-//                    createMuscleGroup()
                     vm.getMuscleGroupList(idWorkOut: (vm.workOutCurrent?.id)!)
-//                    createExercise()
                     vm.getAllMusclGroup(idWorkOut: (vm.workOutCurrent?.id)!)
                     moveToMainView.toggle()
                 } label: {
@@ -55,7 +53,7 @@ struct FirstView: View {
                 Button {
                     vm.getAllWorkOut()
                     showView.toggle()
-                    vm.deleteAllData()
+//                    vm.deleteAllData()
                 } label: {
                     Text("open")
                         .frame(width: 200, height: 40, alignment: .center)
@@ -64,37 +62,29 @@ struct FirstView: View {
                         .cornerRadius(15)
                 }
                 Spacer()
-                Button {
-                    vm.getAllWorkOut()
-                    vm.workOutCurrent = vm.workOutArray.last
-                    createMuscleGroup()
-//                    vm.getMuscleGroupList(workOut: vm.workOutCurrent!)
-//                    createExercise()
-//                    vm.getAllMusclGroup(idWorkOut: (vm.workOutCurrent?.id)!)
-//                    moveToMainView.toggle()
-                } label: {
-                    Text("one")
-                        .frame(width: 200, height: 40, alignment: .center)
-                        .foregroundColor(.black)
-                        .background(Color(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)))
-                        .cornerRadius(15)
-                }
-
-                Button {
-                    vm.getAllWorkOut()
-                    vm.workOutCurrent = vm.workOutArray.last
+//                Button {
+//                    vm.getAllWorkOut()
+//                    vm.workOutCurrent = vm.workOutArray.last
 //                    createMuscleGroup()
-                    vm.getMuscleGroupList(idWorkOut: (vm.workOutCurrent?.id)!)
-//                    createExercise()
-//                    vm.getAllMusclGroup(idWorkOut: (vm.workOutCurrent?.id)!)
-//                    moveToMainView.toggle()
-                } label: {
-                    Text("two")
-                        .frame(width: 200, height: 40, alignment: .center)
-                        .foregroundColor(.black)
-                        .background(Color(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)))
-                        .cornerRadius(15)
-                }
+//                } label: {
+//                    Text("one")
+//                        .frame(width: 200, height: 40, alignment: .center)
+//                        .foregroundColor(.black)
+//                        .background(Color(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)))
+//                        .cornerRadius(15)
+//                }
+//
+//                Button {
+//                    vm.getAllWorkOut()
+//                    vm.workOutCurrent = vm.workOutArray.last
+//                    vm.getMuscleGroupList(idWorkOut: (vm.workOutCurrent?.id)!)
+//                } label: {
+//                    Text("two")
+//                        .frame(width: 200, height: 40, alignment: .center)
+//                        .foregroundColor(.black)
+//                        .background(Color(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)))
+//                        .cornerRadius(15)
+//                }
 
             }
             ZStack{

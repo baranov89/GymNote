@@ -36,9 +36,6 @@ struct TrainigView: View {
             }
             .padding(.vertical, 12)
             TrainingViewMusclGroup(vm: vm, muscleArray: $musculGroupArray, selectedGroup: $selectedGroup, updateMuscleGroupView: $updateMuscleGroupView)
-//            HStack{
-                
-            
             ScrollView(.horizontal, showsIndicators: false)
             {
                 ScrollViewReader(content: { proxy in
@@ -46,10 +43,10 @@ struct TrainigView: View {
                     ForEach(musculGroupArray, id: \.self) { muscleGroup in
                         ScrollView(.vertical, showsIndicators: false) {
                             VStack{
-                                ForEach( (muscleGroup.exerciseRS?.allObjects as? [Exercise])!.sorted(by: { one, two in
+                                ForEach((muscleGroup.exerciseRS?.allObjects as? [Exercise])!.sorted(by: { one, two in
                                     one.number > two.number
                                 }) , id: \.self) { exercise in
-                                    ExerciseItemView(exercise: exercise, vm: vm, showSetView: $showSetView)
+                                    ExerciseItemView(exercise: exercise, vm: vm, showSetView: $showSetView, musculGroupArray: $musculGroupArray, selectedGroup: $selectedGroup, updateMuscleGroupView: $updateMuscleGroupView, changeData: $changeData)
                                         .padding(.vertical, 7)
                                 }
                             }
@@ -94,14 +91,6 @@ struct TrainigView: View {
             selectedGroup = musculGroupArray.first
         }
     }
-
-//    func x(musclGroup: MuscleGroup) -> [Exercise] {
-//        var x  = musclGroup.exerciseRS?.allObjects as? [Exercise].filter {
-//            $0.number < $1.number
-//        }
-//
-//        return x!
-//    }
 }
 
 //struct TrainigView_Previews: PreviewProvider {

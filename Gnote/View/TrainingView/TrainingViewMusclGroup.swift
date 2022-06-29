@@ -48,15 +48,6 @@ struct TrainingViewMusclGroup: View {
                 }
             })
             .frame(width: UIScreen.main.bounds.width)
-//            Button(action: {
-//                selectedGroup = ""
-//            }, label: {
-//                Text( "ALL")
-//                    .foregroundColor(.black)
-//            })
-//            .frame(width: 50, height: 40)
-//            .background(Color(#colorLiteral(red: 0.919830887, green: 0.919830887, blue: 0.919830887, alpha: 1)))
-//            .cornerRadius(20, corners: [.topLeft, .bottomLeft])
         }
     }
 }

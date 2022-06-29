@@ -21,6 +21,7 @@ class CoreDataRelationShipViewModel: ObservableObject {
     @Published var workOutArray: [WorkOut] = []
     @Published var musclGroupArray: [MuscleGroup] = []
     @Published var exerciseArray: [Exercise] = []
+    @Published var exerciseArrayEvery: [Exercise] = []
     @Published var powerSetArray: [PowerSet] = []
     @Published var cardioSetArray: [CardioSet] = []
     @Published var allMuscleGroupArray: [MuscleGroupList] = []
@@ -127,7 +128,9 @@ class CoreDataRelationShipViewModel: ObservableObject {
         request.predicate = filter
         allMuscleGroupArray.removeAll()
         do {
-            try allMuscleGroupArray = manager.context.fetch(request)
+            try allMuscleGroupArray = manager.context.fetch(request).sorted(by: { one, two in
+                one.name! < two.name!
+            })
         } catch let error {
             print("Error fetchig worckout \(error.localizedDescription)")
         }
@@ -216,13 +219,37 @@ class CoreDataRelationShipViewModel: ObservableObject {
         let filter = NSPredicate(format: "muscleGroupRS.id == %@", "\(idMusclGroup)")
         request.predicate = filter
         exerciseArray.removeAll()
-        var exerciseArray: [Exercise] = []
+        var exerciseArrayTwo: [Exercise] = []
         do {
             try exerciseArray = manager.context.fetch(request)
         } catch let error {
             print("Error fetchig vusclgroup \(error.localizedDescription)")
         }
-        return exerciseArray
+        exerciseArrayTwo = exerciseArray
+        return exerciseArrayTwo
+    }
+    
+    func getEveryExercise() {
+        let request = NSFetchRequest<Exercise>(entityName: "Exercise")
+        exerciseArrayEvery.removeAll()
+        do {
+            try exerciseArrayEvery = manager.context.fetch(request)
+        } catch let error {
+            print("Error fetchig vusclgroup \(error.localizedDescription)")
+        }
+    }
+    
+    func getHistoryPowerSet(idExercise: UUID) -> [PowerSet] {
+        let request = NSFetchRequest<PowerSet>(entityName: "PowerSet")
+        let filter = NSPredicate(format: "exerciseRS.id == %@", "\(idExercise)")
+        request.predicate = filter
+        var powerSetHistoryArray: [PowerSet] = []
+        do {
+            try powerSetHistoryArray = manager.context.fetch(request)
+        } catch let error {
+            print("Error fetchig musclgroup \(error.localizedDescription)")
+        }
+        return powerSetHistoryArray
     }
     
     func getAllPowerSet(idExercise: UUID) {

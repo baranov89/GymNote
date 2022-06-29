@@ -41,13 +41,11 @@ struct MusclGroupSelectionView: View {
                 .foregroundColor(Color.black)
                 .padding(.vertical)
                 .animation(.none, value: UUID())
-//            Divider()
-//            Rectangle()
-//                .frame(width: UIScreen.main.bounds.width, height: 1)
-//                .background(Color.black)
             ScrollView {
                 if showMuscleViewBool {
-                    ForEach((chooseMusclegroup!.exerciseListRS?.allObjects as? [ExerciseList])!, id: \.self) { exercise in
+                    ForEach((chooseMusclegroup!.exerciseListRS?.allObjects as? [ExerciseList])!.sorted(by: { one, two in
+                        one.name! < two.name!
+                    }), id: \.self) { exercise in
                         HStack{
                             Button {
                                 chooseExercise = exercise
@@ -91,17 +89,10 @@ struct MusclGroupSelectionView: View {
                             HStack(alignment: .center){
                                 Text(muscleGroup.name ?? "empty")
                                     .padding( .vertical, 7)
-//                                Image(systemName: "chevron.right")
-//                                    .frame(width: 5, height: 5)
-//                                    .font(.system(size: 15, weight: .light, design: .rounded))
-//                                    .foregroundColor(chooseMusclegroup == muscleGroup ? Color.white : Color.black)
-//                                    .padding(.trailing,20)
                             }
                             .foregroundColor(pushMusclGroup == muscleGroup ? Color.gray : Color.black)
                         }
                     }
-//                    .transition(.move(edge: .leading))
-//                    .animation(.easeIn)
                     .frame(width: UIScreen.main.bounds.width)
                 }
                 
@@ -110,7 +101,6 @@ struct MusclGroupSelectionView: View {
                 RoundedRectangle(cornerRadius: 0)
                     .stroke(.gray.opacity(0.2), lineWidth: 1)
             )
-//            Divider()
             Button {
                 pushMusclGroup = nil
                 if showMuscleViewBool {
@@ -132,7 +122,6 @@ struct MusclGroupSelectionView: View {
         }
         .onAppear(perform: {
             vm.getMuscleGroupList(idWorkOut: (vm.workOutCurrent?.id)!)
-//            print(vm.workOutCurrent?.muscleGroupListRS)
         })
     }
 }

@@ -10,7 +10,8 @@ import SwiftUI
 struct WorkoutSelectionView: View {
     @ObservedObject var vm: CoreDataRelationShipViewModel
     @State var moveToMainView: Bool = false
-    
+    var array2 = ["Breast", "Back", "Legs", "Shoulders", "Biceps", "Triceps", "Abs"]
+    var array = ["bench press", "incline bench press", "push-ups", "dumbbells", "dips"]
     @Binding var showView: Bool
     var body: some View {
         VStack{
@@ -24,7 +25,9 @@ struct WorkoutSelectionView: View {
                 ForEach(vm.workOutArray, id: \.self) { workOut in
                     Button {
                         vm.workOutCurrent = workOut
+                        vm.getMuscleGroupList(idWorkOut: (vm.workOutCurrent?.id)!)
                         vm.getAllMusclGroup(idWorkOut: (vm.workOutCurrent?.id)!)
+//                        createMuscleGroup()
                         moveToMainView.toggle()
                     } label: {
                         Text(workOut.date ?? Date(), style: .date)
@@ -46,10 +49,17 @@ struct WorkoutSelectionView: View {
             .padding(.vertical)
             Spacer()
         }
-//        .ignoresSafeArea(edges: .bottom)
         .fullScreenCover(isPresented: $moveToMainView) {
             MainView(vm: vm)
         }
+    }
+    func createMuscleGroup() {
+        for i in 0 ... array2.count - 1 {
+            let musclgrouplist = vm.saveMuscleGroupList(name: array2[i], workOut: vm.workOutCurrent!)
+            for j in 0 ... array.count - 1 {
+                vm.saveExerciseList(name: array[j], muscleGroup: musclgrouplist)
+            }
+       }
     }
 }
 

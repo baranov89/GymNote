@@ -65,7 +65,6 @@ struct KeyboardView: View {
     }
     
     func colorButton(number: String) -> Color  {
-//        disabledButton = false
         if weight.first == "0" && weight.count == 1 && focusFeild == .weight && (number == "1" || number == "2" || number == "3" || number == "4" || number == "5" || number == "6" || number == "7" || number == "8" || number == "9" || number == "0")  {
             return Color.gray.opacity(0.3)
         }
@@ -73,11 +72,9 @@ struct KeyboardView: View {
             return Color.gray.opacity(0.3)
         }
         if repeats.count == 0 && focusFeild == .repeats && (number == "0" || number == "."){
-//            disabledButton = true
             return Color.gray.opacity(0.3)
         }
         if (focusFeild == .repeats || focusFeild == .weight) && number == "." && weight.count == 0 {
-//            disabledButton = true
             return Color.gray.opacity(0.3)
         }
         return Color.black
