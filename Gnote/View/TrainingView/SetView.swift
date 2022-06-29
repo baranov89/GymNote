@@ -17,7 +17,7 @@ struct SetView: View {
     @State var repeats: String = ""
     @State var addButtonPressed = true
     @State var deleteButtonPressed = true
-    @State var historyButtonPressed = false
+    @State var historyButtonPressed = true
     @State var setNew: PowerSet?
     @State var setOld: PowerSet?
     
@@ -187,16 +187,16 @@ struct SetView: View {
             }
             HStack{
                 Button {
-                    getHistory()
+                    if historyButtonPressed {
+                        getHistory()
+                    }
                     withAnimation {
                         historyButtonPressed.toggle()
                     }
                     
                 } label: {
-                    Image(systemName: !historyButtonPressed ? "chevron.down" : "chevron.up")
-                        
+                    Image(systemName: historyButtonPressed ? "chevron.down" : "chevron.up")
                 }
-
             }
             ZStack{
                 VStack{
@@ -230,11 +230,11 @@ struct SetView: View {
                                         .font(.system(size: 17, weight: .medium, design: .rounded))
                                         .foregroundColor(.black)
                                         .padding(.horizontal, 12)
-//                                        .onChange(of: historyButtonPressed, perform: { value in
-//                                            withAnimation {
-//                                                proxy.scrollTo(arrayHistory.last, anchor: .trailing)
-//                                            }
-//                                        })
+                                        .onChange(of: historyButtonPressed, perform: { value in
+                                            withAnimation {
+                                                proxy.scrollTo(arrayHistory.last, anchor: .trailing)
+                                            }
+                                        })
                                     }
                                 }
                             })
@@ -253,7 +253,7 @@ struct SetView: View {
                         .padding(.bottom,50)
                         .background(.white)
                 }
-                .offset(y: !historyButtonPressed ? 0 : 300)
+                .offset(y: historyButtonPressed ? 0 : 300)
             }
             
             
@@ -287,14 +287,11 @@ struct SetView: View {
             break
         case 1:
             findExercise = exer[0]
-            
-        case 2:
-        sortedExeciseArray = exer.sorted { one, two in
-            (one.muscleGroupRS?.workOutRS?.date)! < (two.muscleGroupRS?.workOutRS?.date)!
-        }
-            findExercise = sortedExeciseArray.last
         default:
-            break
+            sortedExeciseArray = exer.sorted { one, two in
+                (one.muscleGroupRS?.workOutRS?.date)! < (two.muscleGroupRS?.workOutRS?.date)!
+            }
+                findExercise = sortedExeciseArray.last
         }
         
         if findExercise != nil {
