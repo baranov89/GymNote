@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct CustomTabBarCintainerView<Content: View> : View {
-    
-    let content: Content
     @ObservedObject var vm: CoreDataRelationShipViewModel
-   
-    @State var tabs: [TabBarItem] = [.categoty,.training,.history]
     
     @Binding var selection: TabBarItem
     @Binding var showView: Bool
     @Binding var showSetView: Bool
     
+    @State var tabs: [TabBarItem] = [.categoty,.training,.history]
+    
+    let content: Content
     
     init(selection: Binding<TabBarItem>, showView: Binding<Bool>, showSetView: Binding<Bool>, vm: CoreDataRelationShipViewModel, @ViewBuilder content: () -> Content) {
         self._selection = selection
@@ -52,12 +51,5 @@ struct CustomTabBarCintainerView<Content: View> : View {
             .zIndex(2.0)
         }
         .frame(height: UIScreen.main.bounds.height)
-        
     }
 }
-
-//struct CustomTabBarCintainerView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CustomTabBarCintainerView()
-//    }
-//}

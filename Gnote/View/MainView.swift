@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct MainView: View {
-    
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var vm: CoreDataRelationShipViewModel
-    @State var tabSelection : TabBarItem = .categoty
     
+    @State var tabSelection : TabBarItem = .categoty
     @State var showView = false
     @State var selectedGroup: MuscleGroup? = nil
     @State var showSetView: Bool = false
@@ -29,9 +28,8 @@ struct MainView: View {
                         .opacity(0.1)
                     TrainigView(vm: vm, showSetView: $showSetView, selectedGroup: $selectedGroup, updateMuscleGroupView: $updateMuscleGroupView, chooseMusclegroup: $chooseMusclegroup, changeData: $changeData)
                         .tabBarItem(tab: .training, selection: $tabSelection)
-                    Color.blue
+                    HistoryViwe(vm: vm)
                         .tabBarItem(tab: .history, selection: $tabSelection)
-                        .opacity(0.1)
                 }
             }
             ZStack{
@@ -50,12 +48,6 @@ struct MainView: View {
             .zIndex(2.0)
         }
         .ignoresSafeArea(edges: .bottom)
-    }   
+    }
 }
 
-//struct MainView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let vm = CoreDataRelationShipViewModel()
-//        MainView(vm: vm)
-//    }
-//}

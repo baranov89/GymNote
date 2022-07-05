@@ -10,6 +10,7 @@ import SwiftUI
 struct TrainigView: View {
     
     @ObservedObject var vm: CoreDataRelationShipViewModel
+    
     @State var musculGroupArray: [MuscleGroup] = []
     @State var musculGroupArrayString: [String] = [""]
     
@@ -43,9 +44,8 @@ struct TrainigView: View {
                     ForEach(musculGroupArray, id: \.self) { muscleGroup in
                         ScrollView(.vertical, showsIndicators: false) {
                             VStack{
-                                ForEach((muscleGroup.exerciseRS?.allObjects as? [Exercise])!.sorted(by: { one, two in
-                                    one.number > two.number
-                                }) , id: \.self) { exercise in
+                                ForEach((muscleGroup.exerciseRS?.allObjects as? [Exercise])!.sorted(by: {one, two in
+                                    one.number > two.number}) , id: \.self) { exercise in
                                     ExerciseItemView(exercise: exercise, vm: vm, showSetView: $showSetView, musculGroupArray: $musculGroupArray, selectedGroup: $selectedGroup, updateMuscleGroupView: $updateMuscleGroupView, changeData: $changeData)
                                         .padding(.vertical, 7)
                                 }
@@ -92,9 +92,3 @@ struct TrainigView: View {
         }
     }
 }
-
-//struct TrainigView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TrainigView()
-//    }
-//}

@@ -9,9 +9,7 @@ import Foundation
 import SwiftUI
 
 enum TabBarItem: Hashable {
-
     case categoty, training, history
-    
     var iconName: String {
         switch self {
         case .categoty: return "square.stack.3d.up"
@@ -19,15 +17,13 @@ enum TabBarItem: Hashable {
         case .history: return "clock"
         }
     }
-        
-        var title: String {
-            switch self {
-            case .categoty: return "Categoty"
-            case .training: return "Training"
-            case .history: return "History"
-            }
+    var title: String {
+        switch self {
+        case .categoty: return "Categoty"
+        case .training: return "Training"
+        case .history: return "History"
         }
-    
+    }
     var colore: Color {
         switch self {
         case .categoty: return Color.red
@@ -35,5 +31,4 @@ enum TabBarItem: Hashable {
         case .history: return Color.green
         }
     }
-        
 }

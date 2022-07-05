@@ -9,13 +9,15 @@ import SwiftUI
 
 struct FirstView: View {
     @StateObject var vm = CoreDataRelationShipViewModel()
+    
     @State var idWorkOut: UUID? = nil
     @State var showView: Bool = false
     @State var moveToMainView: Bool = false
+    
     var date = Date()
     var array2 = ["Breast", "Back", "Legs", "Shoulders", "Biceps", "Triceps", "Abs"]
     var array = ["bench press", "incline bench press", "push-ups", "dumbbells", "dips"]
-    //ZXx
+    
     var body: some View {
         ZStack(alignment: .bottom){
             VStack {
@@ -23,11 +25,10 @@ struct FirstView: View {
                     .frame(width: 40, height: 520, alignment: .center)
                 Button {
                     idWorkOut = UUID()
-                    vm.workOutCurrent = vm.saveWorkout(id: idWorkOut!, date: date)
+                    vm.workOutCurrent = vm.saveWorkout(id: idWorkOut!, year: getYear(), month: getMonth(), date: Date())
                     vm.getAllMusclGroup(idWorkOut: (vm.workOutCurrent?.id)!)
                     createMuscleGroup()
                     moveToMainView.toggle()
-                    
                 } label: {
                     Text("new")
                         .frame(width: 200, height: 40, alignment: .center)
@@ -35,7 +36,6 @@ struct FirstView: View {
                         .background(Color(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)))
                         .cornerRadius(15)
                 }
-                
                 Button {
                     vm.getAllWorkOut()
                     vm.workOutCurrent = vm.workOutArray.last
@@ -53,7 +53,7 @@ struct FirstView: View {
                 Button {
                     vm.getAllWorkOut()
                     showView.toggle()
-//                    vm.deleteAllData()
+                    //                    vm.deleteAllData()
                 } label: {
                     Text("open")
                         .frame(width: 200, height: 40, alignment: .center)
@@ -62,30 +62,6 @@ struct FirstView: View {
                         .cornerRadius(15)
                 }
                 Spacer()
-//                Button {
-//                    vm.getAllWorkOut()
-//                    vm.workOutCurrent = vm.workOutArray.last
-//                    createMuscleGroup()
-//                } label: {
-//                    Text("one")
-//                        .frame(width: 200, height: 40, alignment: .center)
-//                        .foregroundColor(.black)
-//                        .background(Color(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)))
-//                        .cornerRadius(15)
-//                }
-//
-//                Button {
-//                    vm.getAllWorkOut()
-//                    vm.workOutCurrent = vm.workOutArray.last
-//                    vm.getMuscleGroupList(idWorkOut: (vm.workOutCurrent?.id)!)
-//                } label: {
-//                    Text("two")
-//                        .frame(width: 200, height: 40, alignment: .center)
-//                        .foregroundColor(.black)
-//                        .background(Color(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)))
-//                        .cornerRadius(15)
-//                }
-
             }
             ZStack{
                 if showView {
@@ -111,18 +87,34 @@ struct FirstView: View {
             for j in 0 ... array.count - 1 {
                 vm.saveExerciseList(name: array[j], muscleGroup: musclgrouplist)
             }
-       }
+        }
     }
     
-//    func createExercise() {
-//        let x = vm.allMuscleGroupArray
-//
-//       for i in x {
-//            for j in 0 ... 4 {
-//                vm.saveExerciseList(name: array[j], muscleGroup: i)
-//            }
-//        }
-//    }
+    func getYear() -> String {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY"
+        let yearString = dateFormatter.string(from: date)
+        return yearString
+    }
+    
+    func getMonth() -> String {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "LLLL"
+        let monthString = dateFormatter.string(from: date)
+        return monthString
+    }
+    
+    //    func createExercise() {
+    //        let x = vm.allMuscleGroupArray
+    //
+    //       for i in x {
+    //            for j in 0 ... 4 {
+    //                vm.saveExerciseList(name: array[j], muscleGroup: i)
+    //            }
+    //        }
+    //    }
 }
 
 struct FirstView_Previews: PreviewProvider {

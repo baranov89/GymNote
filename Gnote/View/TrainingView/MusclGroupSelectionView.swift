@@ -23,7 +23,6 @@ struct MusclGroupSelectionView: View {
     @Binding var changeData: Bool
     @Binding var chooseMusclegroup: MuscleGroupList?
     
-    
     func getMuscleGroupFoName (name: String) -> MuscleGroup {
         let muscleGroupArray = vm.getCurrentMusclGroup(MuscleGroup: musculGroupName)
         let y = muscleGroupArray.filter { muscle in
@@ -125,9 +124,3 @@ struct MusclGroupSelectionView: View {
         })
     }
 }
-
-//struct MusclGroupSelectionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MusclGroupSelectionView()
-//    }
-//}

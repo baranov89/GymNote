@@ -103,9 +103,3 @@ struct KeyboardView: View {
         }
     }
 }
-
-//struct KeyboardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        KeyboardView()
-//    }
-//}

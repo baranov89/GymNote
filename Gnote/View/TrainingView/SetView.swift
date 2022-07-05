@@ -159,8 +159,7 @@ struct SetView: View {
                 }
                 .disabled(disabledDeleteButton())
                 .padding(.vertical, 20)
-                
-            Spacer()
+                Spacer()
                 Button {
                     setNew = vm.savePowerSet(id: UUID(), name: "", repeads: Int64(repeats)!, set: Int64((vm.exerciseACurrent?.powerSetRS!.count)! + 1), weight: Double(weight)!, exercise: vm.exerciseACurrent!)
                     vm.getAllPowerSet(idExercise: (vm.exerciseACurrent?.id)!)
@@ -170,7 +169,6 @@ struct SetView: View {
                     withAnimation {
                         addButtonPressed.toggle()
                     }
-                    
                 } label: {
                     Text("add")
                         .font(.system(size: 24, weight: .light, design: .rounded))
@@ -183,7 +181,7 @@ struct SetView: View {
                 }
                 .disabled(disabledAddButton())
                 .padding(.vertical, 20)
-            Spacer()
+                Spacer()
             }
             HStack{
                 Button {
@@ -193,7 +191,6 @@ struct SetView: View {
                     withAnimation {
                         historyButtonPressed.toggle()
                     }
-                    
                 } label: {
                     Image(systemName: historyButtonPressed ? "chevron.down" : "chevron.up")
                 }
@@ -204,50 +201,50 @@ struct SetView: View {
                     HStack{
                         Text(historyIs ? "Last exercise - none" : "Last exercise - \(dateHistory, format: Date.FormatStyle().day().month().year())")
                     }
-                HStack{
                     HStack{
-                        VStack(alignment: .trailing) {
-                            Text("set")
-                            Text("weight")
-                                .padding(.vertical, 5)
-                            Text("repeat")
-                        }
-                        .font(.system(size: 17, weight: .medium, design: .rounded))
-                        .foregroundColor(.black)
-                        .frame(height: 100)
-                        ScrollView(.horizontal, showsIndicators: false, content: {
-                            ScrollViewReader(content: { proxy in
-                                HStack{
-                                    ForEach(arrayHistory, id: \.self) { setOne in
-                                        VStack{
-                                            Text("\(setOne.set)")
-                                                .foregroundColor(.gray)
-                                            Text("\(Int(setOne.weight))")
-                                                .padding(.vertical, 5)
-                                            Text("\(setOne.repeats)")
-                                        }
-                                        .id(setOne)
-                                        .font(.system(size: 17, weight: .medium, design: .rounded))
-                                        .foregroundColor(.black)
-                                        .padding(.horizontal, 12)
-                                        .onChange(of: historyButtonPressed, perform: { value in
-                                            withAnimation {
-                                                proxy.scrollTo(arrayHistory.last, anchor: .trailing)
+                        HStack{
+                            VStack(alignment: .trailing) {
+                                Text("set")
+                                Text("weight")
+                                    .padding(.vertical, 5)
+                                Text("repeat")
+                            }
+                            .font(.system(size: 17, weight: .medium, design: .rounded))
+                            .foregroundColor(.black)
+                            .frame(height: 100)
+                            ScrollView(.horizontal, showsIndicators: false, content: {
+                                ScrollViewReader(content: { proxy in
+                                    HStack{
+                                        ForEach(arrayHistory, id: \.self) { setOne in
+                                            VStack{
+                                                Text("\(setOne.set)")
+                                                    .foregroundColor(.gray)
+                                                Text("\(Int(setOne.weight))")
+                                                    .padding(.vertical, 5)
+                                                Text("\(setOne.repeats)")
                                             }
-                                        })
+                                            .id(setOne)
+                                            .font(.system(size: 17, weight: .medium, design: .rounded))
+                                            .foregroundColor(.black)
+                                            .padding(.horizontal, 12)
+                                            .onChange(of: historyButtonPressed, perform: { value in
+                                                withAnimation {
+                                                    proxy.scrollTo(arrayHistory.last, anchor: .trailing)
+                                                }
+                                            })
+                                        }
                                     }
-                                }
+                                })
                             })
-                        })
-                        .frame(width: 250, height: 100)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)), lineWidth: 0.5)
-                        )
+                            .frame(width: 250, height: 100)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)), lineWidth: 0.5)
+                            )
+                        }
+                        .padding(.bottom, 60)
                     }
-                    .padding(.bottom, 60)
                 }
-            }
                 HStack{
                     KeyboardView(weight: $weight, repeats: $repeats, focusFeild: $focusFeild)
                         .padding(.bottom,50)
@@ -255,8 +252,6 @@ struct SetView: View {
                 }
                 .offset(y: historyButtonPressed ? 0 : 300)
             }
-            
-            
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         .background(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
@@ -264,9 +259,9 @@ struct SetView: View {
             historyIs = true
             vm.getAllPowerSet(idExercise: (vm.exerciseACurrent?.id)!)
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(5)) {
-                setNew = g()
+                setNew = getNewPowerSet()
                 addButtonPressed.toggle()
-                    }
+            }
         }
     }
     
@@ -275,10 +270,11 @@ struct SetView: View {
         var exer: [Exercise] = []
         for i in vm.exerciseArrayEvery {
             if i.id != vm.exerciseACurrent?.id && i.muscleGroupRS?.name == vm.exerciseACurrent?.muscleGroupRS!.name && i.name == vm.exerciseACurrent?.name {
-                exer.append(i)
+                if i.powerSetRS?.count != 0 {
+                    exer.append(i)
+                }
             }
         }
-        
         var findExercise: Exercise?
         var sortedExeciseArray: [Exercise] = []
         
@@ -291,7 +287,7 @@ struct SetView: View {
             sortedExeciseArray = exer.sorted { one, two in
                 (one.muscleGroupRS?.workOutRS?.date)! < (two.muscleGroupRS?.workOutRS?.date)!
             }
-                findExercise = sortedExeciseArray.last
+            findExercise = sortedExeciseArray.last
         }
         
         if findExercise != nil {
@@ -299,7 +295,6 @@ struct SetView: View {
             historyIs = false
             arrayHistory = vm.getHistoryPowerSet(idExercise: (findExercise?.id)!)
         }
-        
     }
     
     func disabledAddButton() -> Bool {
@@ -321,27 +316,19 @@ struct SetView: View {
         vm.getAllPowerSet(idExercise: (vm.exerciseACurrent?.id)!)
     }
     
-    func g() -> PowerSet? {
+    func getNewPowerSet() -> PowerSet? {
         vm.getAllPowerSet(idExercise: (vm.exerciseACurrent?.id)!)
-            let x: [PowerSet] = vm.powerSetArray
-            for i in x {
-                if i.set == (vm.powerSetArray).count {
-                    return i
-                }
+        let x: [PowerSet] = vm.powerSetArray
+        for i in x {
+            if i.set == (vm.powerSetArray).count {
+                return i
             }
-        
+        }
         return nil
     }
 }
-
 
 enum FocusFeild {
     case weight
     case repeats
 }
-
-//struct SetView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SetView()
-//    }
-//}

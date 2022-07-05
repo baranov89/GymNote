@@ -26,7 +26,7 @@ class CoreDataRelationShipViewModel: ObservableObject {
     @Published var cardioSetArray: [CardioSet] = []
     @Published var allMuscleGroupArray: [MuscleGroupList] = []
     @Published var allExerciseArray: [ExerciseList] = []
-    
+    @Published var count = 0
     func save() {
         manager.save()
     }
@@ -43,9 +43,10 @@ class CoreDataRelationShipViewModel: ObservableObject {
         return muscleGroupList
     }
     
-    func saveWorkout(id: UUID, name: String = "Тренировка", date: Date) -> WorkOut {
+    func saveWorkout(id: UUID, year: String, month: String, date: Date) -> WorkOut {
         let workOut = WorkOut(context: manager.context)
-        workOut.name = name
+        workOut.year = year
+        workOut.month = month
         workOut.date = date
         workOut.id = id
         

@@ -59,7 +59,6 @@ extension View {
 }
 
 struct RoundedCorner: Shape {
-
     var radius: CGFloat = .infinity
     var corners: UIRectCorner = .allCorners
 
@@ -68,9 +67,3 @@ struct RoundedCorner: Shape {
         return Path(path.cgPath)
     }
 }
-
-//struct TrainingViewMusclGroup_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TrainingViewMusclGroup()
-//    }
-//}

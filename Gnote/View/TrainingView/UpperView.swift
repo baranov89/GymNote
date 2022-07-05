@@ -36,11 +36,6 @@ struct UpperView: View {
         case TabBarItem.categoty: return toppic[0]
         case TabBarItem.training: return toppic[1]
         case TabBarItem.history: return toppic[2]
+        }
     }
 }
-}
-//struct UpperView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        UpperView()
-//    }
-//}

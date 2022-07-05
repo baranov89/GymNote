@@ -27,7 +27,7 @@ struct WorkoutSelectionView: View {
                         vm.workOutCurrent = workOut
                         vm.getMuscleGroupList(idWorkOut: (vm.workOutCurrent?.id)!)
                         vm.getAllMusclGroup(idWorkOut: (vm.workOutCurrent?.id)!)
-//                        createMuscleGroup()
+                        //                        createMuscleGroup()
                         moveToMainView.toggle()
                     } label: {
                         Text(workOut.date ?? Date(), style: .date)
@@ -59,12 +59,6 @@ struct WorkoutSelectionView: View {
             for j in 0 ... array.count - 1 {
                 vm.saveExerciseList(name: array[j], muscleGroup: musclgrouplist)
             }
-       }
+        }
     }
 }
-
-//struct WorkoutSelectionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        WorkoutSelectionView()
-//    }
-//}
