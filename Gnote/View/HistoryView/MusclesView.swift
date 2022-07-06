@@ -28,6 +28,7 @@ struct MusclesView: View {
                     }
                 } label: {
                     Text("Muscle:")
+                        .font(.system(size: 18, weight: .light, design: .rounded))
                         .foregroundColor(toggleMuscle ? .blue : .gray)
                 }
                 .padding(.leading, 20)
@@ -35,6 +36,7 @@ struct MusclesView: View {
                 Text("\(toggleMuscle ? selectedMuscle : "all muscles")")
                     .foregroundColor(toggleMuscle ? .black : .gray)
             }
+            .font(.system(size: 18, weight: .light, design: .rounded))
         }
         .tint(.red.opacity(0.3))
         .padding(.trailing , 20)

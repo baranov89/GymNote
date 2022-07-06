@@ -30,6 +30,7 @@ struct YearsView: View {
             Text("\(selectedYear)")
             Spacer()
         }
+        .font(.system(size: 18, weight: .light, design: .rounded))
     }
 }
 

@@ -34,6 +34,7 @@ struct MonthsView: View {
                 Text("\(toggleMonth ? selectedMonth : "all months")")
                     .foregroundColor(toggleMonth ? .black : .gray)
             }
+            .font(.system(size: 18, weight: .light, design: .rounded))
         }
         .tint(.red.opacity(0.3))
         .padding(.trailing , 20)

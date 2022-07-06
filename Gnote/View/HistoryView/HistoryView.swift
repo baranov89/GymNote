@@ -33,17 +33,28 @@ struct HistoryViwe: View {
     @State var toggleShowMuscleGroup: Bool = false
     @State var countX = 0
     
+    @Binding var showSetHistoryView: Bool
+    @Binding var selectedMusleGroup: MuscleGroup?
+    
     var body: some View {
         VStack{
             HStack{
-                Text("Add Filter")
+                Text("Add Filters")
+                    .font(.system(size: 22, weight: .light, design: .rounded))
                     .padding(.leading , 20)
                 Spacer()
+                HStack{
+                    Text("Workout count:")
+                    Text("\(workOutFiltered.count)")
+                }
+                    .font(.system(size: 15, weight: .thin, design: .rounded))
+                    .padding(.trailing , 20)
             }
             .padding(.top, 20)
             Divider()
             VStack{
                 YearsView(yearSArray: $yearsArray, selectedYear: $selectedYear)
+                    .padding(.top, 10)
                 MonthsView(monthArray: $monthArray, selectedMonth: $selectedMonth, toggleMonth: $toggleMonth, chsngeMonth: $changeMonth)
                     .padding(.vertical, 5)
                 MusclesView(musclesArray: $musclesArray, selectedMuscle: $selectedMuscle, toggleMuscle: $toggleMuscle, toggleExercise: $toggleExercise, changeMuscle: $changeMuscle)
@@ -51,6 +62,7 @@ struct HistoryViwe: View {
                     Toggle(isOn: $toggleShowMuscleGroup) {
                         Text("Show muscle group")
                             .padding(.leading, 20)
+                            .font(.system(size: 18, weight: .light, design: .rounded))
                     }
                     .padding(.trailing, 20)
                     .tint(.red.opacity(0.3))
@@ -58,7 +70,7 @@ struct HistoryViwe: View {
                 .padding(.top, 20)
                 Divider()
             }
-            ExerciseScrollView(workOutFiltered: $workOutFiltered, toggleMuscle: $toggleMuscle, toggleMonth: $toggleMonth, toggleShowMuscleGroup: $toggleShowMuscleGroup)
+            ExerciseScrollView(workOutFiltered: $workOutFiltered, toggleMuscle: $toggleMuscle, toggleMonth: $toggleMonth, toggleShowMuscleGroup: $toggleShowMuscleGroup, showSetHistoryView: $showSetHistoryView, selectedMusleGroup: $selectedMusleGroup)
             .onAppear{
                 getYears()
                 selectedYear = yearsArray.first!
@@ -86,7 +98,6 @@ struct HistoryViwe: View {
                     } else {
                         selectedExercise = exercisesArray.first!
                     }
-                    
                 }
                 filterForWorkOut()
             })

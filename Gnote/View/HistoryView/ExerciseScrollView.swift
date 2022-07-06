@@ -12,6 +12,8 @@ struct ExerciseScrollView: View {
     @Binding var toggleMuscle: Bool
     @Binding var toggleMonth: Bool
     @Binding var toggleShowMuscleGroup: Bool
+    @Binding var showSetHistoryView: Bool
+    @Binding var selectedMusleGroup: MuscleGroup?
     
     @State var selectedIndex: [Int] = []
     @State var workOutPush: [Int] = []
@@ -26,35 +28,49 @@ struct ExerciseScrollView: View {
                                 Text("\(indexWorkOut + 1)")
                                     .frame(width: 20)
                                     .padding(.leading, 10)
-                                    .padding(.trailing, 20)
-                                Text("\(workOutFiltered[indexWorkOut].date!, format: Date.FormatStyle().weekday().day().month())")
+//                                    .padding(.trailing, 10)
+                                Text(getDate(date: (workOutFiltered[indexWorkOut].date!), object: "dayOfWeek") + ",")
+                                Text(getDate(date: (workOutFiltered[indexWorkOut].date!), object: "dayNumber"))
+                                Text(getDate(date: (workOutFiltered[indexWorkOut].date!), object: "month"))
                                 Spacer()
-                                Text("musle groups:")
-                                    .foregroundColor(.gray)
-                                Text("\((workOutFiltered[indexWorkOut].muscleGroupRS?.allObjects as? [MuscleGroup])!.count)")
-                                    .frame(width: 20)
-                                    .padding(.trailing, 10)
+                                HStack{
+                                    Text("musle groups:")
+                                        
+                                    Text("\((workOutFiltered[indexWorkOut].muscleGroupRS?.allObjects as? [MuscleGroup])!.count)")
+                                        .frame(width: 20)
+                                        .padding(.trailing, 10)
+                                }
+                                .foregroundColor(.gray)
+                                .font(.system(size: 15, weight: .light, design: .rounded))
                             }
+                            .font(.system(size: 18, weight: .light, design: .rounded))
                             .padding(.vertical, 5)
                             if toggleShowMuscleGroup || (selectedIndex.contains(indexWorkOut)){
                                 VStack{
                                     ForEach((workOutFiltered[indexWorkOut].muscleGroupRS?.allObjects as? [MuscleGroup])!) { muscle in
                                         HStack{
                                             Button {
-                                                
+                                                selectedMusleGroup = muscle
+                                                withAnimation(.easeIn) {
+                                                    showSetHistoryView.toggle()
+                                                }
                                             } label: {
                                                 Text("\(muscle.name!)")
                                                     .padding(.bottom, 1)
                                                     .padding(.leading, 70)
-                                                    .foregroundColor(.red.opacity(0.8))
                                             }
+                                            .font(.system(size: 18, weight: .light, design: .rounded))
                                             Spacer()
+                                            HStack{
                                             Text("ex.:")
-                                                .foregroundColor(.gray)
                                             Text("\((muscle.exerciseRS?.allObjects as? [Exercise])!.count)")
                                                 .frame(width: 20)
                                                 .padding(.trailing, 10)
+                                            }
+                                            .foregroundColor(.gray)
+                                            .font(.system(size: 15, weight: .light, design: .rounded))
                                         }
+                                        
                                     }
                                 }
                             }
@@ -103,6 +119,23 @@ struct ExerciseScrollView: View {
             selectedIndex.removeAll()
             workOutPush.removeAll()
         })
+    }
+    
+    func getDate(date: Date, object: String) -> String {
+        let dateFormatter = DateFormatter()
+        var objectDate = ""
+        switch object {
+        case "dayNumber":
+            objectDate = "d"
+        case "month":
+            objectDate = "LLLL"
+        case "dayOfWeek":
+            objectDate = "EEEE"
+        default:
+            break
+        }
+        dateFormatter.dateFormat = objectDate
+        return dateFormatter.string(from: date).capitalized
     }
 }
 

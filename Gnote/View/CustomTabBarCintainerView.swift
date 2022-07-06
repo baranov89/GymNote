@@ -11,16 +11,21 @@ struct CustomTabBarCintainerView<Content: View> : View {
     @ObservedObject var vm: CoreDataRelationShipViewModel
     
     @Binding var selection: TabBarItem
+    @Binding var selectedMusleGroup: MuscleGroup?
+    
     @Binding var showView: Bool
     @Binding var showSetView: Bool
+    @Binding var showSetHistoryView: Bool
     
     @State var tabs: [TabBarItem] = [.categoty,.training,.history]
     
     let content: Content
     
-    init(selection: Binding<TabBarItem>, showView: Binding<Bool>, showSetView: Binding<Bool>, vm: CoreDataRelationShipViewModel, @ViewBuilder content: () -> Content) {
+    init(selection: Binding<TabBarItem>, showView: Binding<Bool>, showSetView: Binding<Bool>, vm: CoreDataRelationShipViewModel, showSetHistoryView: Binding<Bool>, selectedMusleGroup: Binding<MuscleGroup?>, @ViewBuilder content: () -> Content) {
         self._selection = selection
         self._showView = showView
+        self._showSetHistoryView = showSetHistoryView
+        self._selectedMusleGroup = selectedMusleGroup
         self.content = content()
         self._showSetView = showSetView
         self.vm = vm
@@ -44,6 +49,10 @@ struct CustomTabBarCintainerView<Content: View> : View {
             HStack{
                 if showSetView {
                     SetView(vm: vm, showSetView: $showSetView)
+                        .transition(.move(edge: .trailing))
+                }
+                if showSetHistoryView {
+                    SetHistoryView(showSetHistoryView: $showSetHistoryView, selectedMusleGroup: $selectedMusleGroup)
                         .transition(.move(edge: .trailing))
                 }
             }

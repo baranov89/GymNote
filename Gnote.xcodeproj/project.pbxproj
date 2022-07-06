@@ -32,6 +32,7 @@
 		792D7D3F28707DCA006D2E64 /* MonthsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D7D3E28707DCA006D2E64 /* MonthsView.swift */; };
 		792D7D4128707DE8006D2E64 /* MusclesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D7D4028707DE8006D2E64 /* MusclesView.swift */; };
 		793B5A3028748C98007C03DE /* ExerciseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B5A2F28748C98007C03DE /* ExerciseScrollView.swift */; };
+		793B5A3228753B56007C03DE /* SetHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B5A3128753B56007C03DE /* SetHistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		792D7D3E28707DCA006D2E64 /* MonthsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsView.swift; sourceTree = "<group>"; };
 		792D7D4028707DE8006D2E64 /* MusclesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesView.swift; sourceTree = "<group>"; };
 		793B5A2F28748C98007C03DE /* ExerciseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseScrollView.swift; sourceTree = "<group>"; };
+		793B5A3128753B56007C03DE /* SetHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetHistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				792D7D37286F295F006D2E64 /* HistoryView.swift */,
+				793B5A3128753B56007C03DE /* SetHistoryView.swift */,
 				793B5A2F28748C98007C03DE /* ExerciseScrollView.swift */,
 				792D7D4028707DE8006D2E64 /* MusclesView.swift */,
 				792D7D3E28707DCA006D2E64 /* MonthsView.swift */,
@@ -249,6 +252,7 @@
 				4ECF63422823E3EC00A6A625 /* ExerciseItemView.swift in Sources */,
 				4E9F6AEF27FE030500B5AD29 /* GnoteApp.swift in Sources */,
 				792D7D3F28707DCA006D2E64 /* MonthsView.swift in Sources */,
+				793B5A3228753B56007C03DE /* SetHistoryView.swift in Sources */,
 				4E7F250D2816DAF70051BA59 /* TapBarItemsPreferenceKey.swift in Sources */,
 				4E0F1D90281C215300C3F441 /* TrainigView.swift in Sources */,
 				793B5A3028748C98007C03DE /* ExerciseScrollView.swift in Sources */,

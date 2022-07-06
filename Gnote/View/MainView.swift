@@ -12,23 +12,26 @@ struct MainView: View {
     @ObservedObject var vm: CoreDataRelationShipViewModel
     
     @State var tabSelection : TabBarItem = .categoty
-    @State var showView = false
     @State var selectedGroup: MuscleGroup? = nil
-    @State var showSetView: Bool = false
     @State var updateMuscleGroupView = false
     @State var chooseMusclegroup: MuscleGroupList?
     @State var changeData = false
+    @State var selectedMusleGroup: MuscleGroup?
+    
+    @State var showView: Bool = false
+    @State var showSetView: Bool = false
+    @State var showSetHistoryView: Bool = false
     
     var body: some View {
         ZStack(alignment: .bottom){
             VStack{
-                CustomTabBarCintainerView(selection: $tabSelection, showView: $showView, showSetView: $showSetView, vm: vm) {
+                CustomTabBarCintainerView(selection: $tabSelection, showView: $showView, showSetView: $showSetView, vm: vm, showSetHistoryView: $showSetHistoryView, selectedMusleGroup: $selectedMusleGroup) {
                     Color.black
                         .tabBarItem(tab: .categoty, selection: $tabSelection)
                         .opacity(0.1)
                     TrainigView(vm: vm, showSetView: $showSetView, selectedGroup: $selectedGroup, updateMuscleGroupView: $updateMuscleGroupView, chooseMusclegroup: $chooseMusclegroup, changeData: $changeData)
                         .tabBarItem(tab: .training, selection: $tabSelection)
-                    HistoryViwe(vm: vm)
+                    HistoryViwe(vm: vm, showSetHistoryView: $showSetHistoryView, selectedMusleGroup: $selectedMusleGroup)
                         .tabBarItem(tab: .history, selection: $tabSelection)
                 }
             }

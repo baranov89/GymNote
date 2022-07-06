@@ -27,7 +27,7 @@ struct FirstView: View {
                     idWorkOut = UUID()
                     vm.workOutCurrent = vm.saveWorkout(id: idWorkOut!, year: getYear(), month: getMonth(), date: Date())
                     vm.getAllMusclGroup(idWorkOut: (vm.workOutCurrent?.id)!)
-                    createMuscleGroup()
+                    createMuscleGroupList()
                     moveToMainView.toggle()
                 } label: {
                     Text("new")
@@ -81,7 +81,7 @@ struct FirstView: View {
         .edgesIgnoringSafeArea(.bottom)
     }
     
-    func createMuscleGroup() {
+    func createMuscleGroupList() {
         for i in 0 ... array2.count - 1 {
             let musclgrouplist = vm.saveMuscleGroupList(name: array2[i], workOut: vm.workOutCurrent!)
             for j in 0 ... array.count - 1 {
@@ -105,16 +105,6 @@ struct FirstView: View {
         let monthString = dateFormatter.string(from: date)
         return monthString
     }
-    
-    //    func createExercise() {
-    //        let x = vm.allMuscleGroupArray
-    //
-    //       for i in x {
-    //            for j in 0 ... 4 {
-    //                vm.saveExerciseList(name: array[j], muscleGroup: i)
-    //            }
-    //        }
-    //    }
 }
 
 struct FirstView_Previews: PreviewProvider {

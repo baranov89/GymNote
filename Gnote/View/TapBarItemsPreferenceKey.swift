@@ -27,7 +27,7 @@ struct  TabBarViewModifer: ViewModifier {
 
 extension View {
     func tabBarItem(tab: TabBarItem, selection: Binding<TabBarItem>) -> some View {
-        modifier(TabBarViewModifer(tab: tab, selection: selection))
+        modifier(TabBarViewModifer(selection: selection, tab: tab))
     }
 }
 
