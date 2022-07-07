@@ -33,6 +33,10 @@
 		792D7D4128707DE8006D2E64 /* MusclesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D7D4028707DE8006D2E64 /* MusclesView.swift */; };
 		793B5A3028748C98007C03DE /* ExerciseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B5A2F28748C98007C03DE /* ExerciseScrollView.swift */; };
 		793B5A3228753B56007C03DE /* SetHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B5A3128753B56007C03DE /* SetHistoryView.swift */; };
+		79BD44B52876A175003ACCE0 /* ChangeDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BD44B42876A175003ACCE0 /* ChangeDataView.swift */; };
+		79BD44BC287736C1003ACCE0 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BD44BB287736C1003ACCE0 /* IconView.swift */; };
+		79BD44BE2877376A003ACCE0 /* SelectedChangeDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BD44BD2877376A003ACCE0 /* SelectedChangeDataView.swift */; };
+		79BD44C028774112003ACCE0 /* ArrayDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BD44BF28774112003ACCE0 /* ArrayDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		792D7D4028707DE8006D2E64 /* MusclesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesView.swift; sourceTree = "<group>"; };
 		793B5A2F28748C98007C03DE /* ExerciseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseScrollView.swift; sourceTree = "<group>"; };
 		793B5A3128753B56007C03DE /* SetHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetHistoryView.swift; sourceTree = "<group>"; };
+		79BD44B42876A175003ACCE0 /* ChangeDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDataView.swift; sourceTree = "<group>"; };
+		79BD44BB287736C1003ACCE0 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		79BD44BD2877376A003ACCE0 /* SelectedChangeDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedChangeDataView.swift; sourceTree = "<group>"; };
+		79BD44BF28774112003ACCE0 /* ArrayDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +101,7 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
-		4E69394C28020A8B00554B66 /* View */ = {
+		4E69394C28020A8B00554B66 /* ComandView */ = {
 			isa = PBXGroup;
 			children = (
 				4E69394D28049B9B00554B66 /* FirstView.swift */,
@@ -102,10 +110,11 @@
 				4E39B562280F3C6E006A5AD1 /* CustomTabBarView.swift */,
 				4E7F250C2816DAF70051BA59 /* TapBarItemsPreferenceKey.swift */,
 				4E7F250E2816E27A0051BA59 /* TabBarItem.swift */,
+				79BD44B62876A179003ACCE0 /* ChangeDataView */,
 				792D7D39286F2969006D2E64 /* HistoryView */,
 				79104119284A95D500C51528 /* TrainingView */,
 			);
-			path = View;
+			path = ComandView;
 			sourceTree = "<group>";
 		};
 		4E9F6AE227FE030500B5AD29 = {
@@ -130,7 +139,7 @@
 				4E9F6AEE27FE030500B5AD29 /* GnoteApp.swift */,
 				4E69394A28020A4100554B66 /* ViewModel */,
 				4E69394B28020A5B00554B66 /* DataManager */,
-				4E69394C28020A8B00554B66 /* View */,
+				4E69394C28020A8B00554B66 /* ComandView */,
 				4E9F6AF227FE030600B5AD29 /* Assets.xcassets */,
 				4E9F6AF727FE030600B5AD29 /* Info.plist */,
 				4E9F6B0027FE03FF00B5AD29 /* DataBase.xcdatamodeld */,
@@ -173,6 +182,17 @@
 				792D7D3C28707DAE006D2E64 /* YearsView.swift */,
 			);
 			path = HistoryView;
+			sourceTree = "<group>";
+		};
+		79BD44B62876A179003ACCE0 /* ChangeDataView */ = {
+			isa = PBXGroup;
+			children = (
+				79BD44B42876A175003ACCE0 /* ChangeDataView.swift */,
+				79BD44BD2877376A003ACCE0 /* SelectedChangeDataView.swift */,
+				79BD44BF28774112003ACCE0 /* ArrayDataView.swift */,
+				79BD44BB287736C1003ACCE0 /* IconView.swift */,
+			);
+			path = ChangeDataView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +267,7 @@
 				4E7ABA8E280740B400333E59 /* MainView.swift in Sources */,
 				4E69394E28049B9B00554B66 /* FirstView.swift in Sources */,
 				4E0F1D92281C295F00C3F441 /* TrainingViewMusclGroup.swift in Sources */,
+				79BD44BC287736C1003ACCE0 /* IconView.swift in Sources */,
 				791823642843E76E006A6E80 /* KeyboardView.swift in Sources */,
 				4E25194B282AC575008F4BAE /* SetView.swift in Sources */,
 				4ECF63422823E3EC00A6A625 /* ExerciseItemView.swift in Sources */,
@@ -256,6 +277,8 @@
 				4E7F250D2816DAF70051BA59 /* TapBarItemsPreferenceKey.swift in Sources */,
 				4E0F1D90281C215300C3F441 /* TrainigView.swift in Sources */,
 				793B5A3028748C98007C03DE /* ExerciseScrollView.swift in Sources */,
+				79BD44B52876A175003ACCE0 /* ChangeDataView.swift in Sources */,
+				79BD44C028774112003ACCE0 /* ArrayDataView.swift in Sources */,
 				792D7D3D28707DAE006D2E64 /* YearsView.swift in Sources */,
 				4E1B33EC2815C44C005DEABD /* CustomTabBarCintainerView.swift in Sources */,
 				4E9F6B0427FE103B00B5AD29 /* CoreDataManager.swift in Sources */,
@@ -263,6 +286,7 @@
 				792D7D38286F2960006D2E64 /* HistoryView.swift in Sources */,
 				792D7D4128707DE8006D2E64 /* MusclesView.swift in Sources */,
 				4E7F250F2816E27A0051BA59 /* TabBarItem.swift in Sources */,
+				79BD44BE2877376A003ACCE0 /* SelectedChangeDataView.swift in Sources */,
 				4E39B563280F3C6E006A5AD1 /* CustomTabBarView.swift in Sources */,
 				4E9F6B0227FE03FF00B5AD29 /* DataBase.xcdatamodeld in Sources */,
 				4EC5A19A28185F7B000F814B /* UpperView.swift in Sources */,

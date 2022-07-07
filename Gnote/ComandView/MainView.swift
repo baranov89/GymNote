@@ -26,9 +26,8 @@ struct MainView: View {
         ZStack(alignment: .bottom){
             VStack{
                 CustomTabBarCintainerView(selection: $tabSelection, showView: $showView, showSetView: $showSetView, vm: vm, showSetHistoryView: $showSetHistoryView, selectedMusleGroup: $selectedMusleGroup) {
-                    Color.black
+                    ChangeDataView(vm: vm)
                         .tabBarItem(tab: .categoty, selection: $tabSelection)
-                        .opacity(0.1)
                     TrainigView(vm: vm, showSetView: $showSetView, selectedGroup: $selectedGroup, updateMuscleGroupView: $updateMuscleGroupView, chooseMusclegroup: $chooseMusclegroup, changeData: $changeData)
                         .tabBarItem(tab: .training, selection: $tabSelection)
                     HistoryViwe(vm: vm, showSetHistoryView: $showSetHistoryView, selectedMusleGroup: $selectedMusleGroup)

@@ -24,18 +24,16 @@ struct TrainigView: View {
     
     var body: some View {
         VStack{
+            
             HStack{
-                Text("24.04.2022")
-                    .padding(.horizontal,40)
-                    .foregroundColor(Color.black)
+                Text("Wednesday, ")
+                    .font(.system(size: 22, weight: .light, design: .rounded))
+                    .padding(.leading , 20)
+                Text("24 July 2022")
                     .font(.system(size: 20, weight: .light, design: .rounded))
                 Spacer()
-                Text("Wednesday")
-                    .padding(.horizontal,40)
-                    .foregroundColor(Color.black)
-                    .font(.system(size: 20, weight: .light, design: .rounded))
             }
-            .padding(.vertical, 12)
+            .padding(.top, 20)
             TrainingViewMusclGroup(vm: vm, muscleArray: $musculGroupArray, selectedGroup: $selectedGroup, updateMuscleGroupView: $updateMuscleGroupView)
             ScrollView(.horizontal, showsIndicators: false)
             {
