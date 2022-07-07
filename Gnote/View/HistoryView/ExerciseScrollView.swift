@@ -57,7 +57,7 @@ struct ExerciseScrollView: View {
                                             } label: {
                                                 Text("\(muscle.name!)")
                                                     .padding(.bottom, 1)
-                                                    .padding(.leading, 70)
+                                                    .padding(.leading, 40)
                                             }
                                             .font(.system(size: 18, weight: .light, design: .rounded))
                                             Spacer()

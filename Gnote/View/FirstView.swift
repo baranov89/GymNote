@@ -15,8 +15,14 @@ struct FirstView: View {
     @State var moveToMainView: Bool = false
     
     var date = Date()
-    var array2 = ["Breast", "Back", "Legs", "Shoulders", "Biceps", "Triceps", "Abs"]
-    var array = ["bench press", "incline bench press", "push-ups", "dumbbells", "dips"]
+    var arrayExercise: [[String]] = [["bench press", "incline bench press", "push-ups", "dumbbells", "dips"],
+                                     ["bench press", "incline bench press", "push-ups", "dumbbells", "dips"],
+                                     ["bench press", "incline bench press", "push-ups", "dumbbells", "dips"],
+                                     ["bench press", "incline bench press", "push-ups", "dumbbells", "dips"],
+                                     ["bench press", "incline bench press", "push-ups", "dumbbells", "dips"],
+                                     ["bench press", "incline bench press", "push-ups", "dumbbells", "dips"],
+                                     ["bench press", "incline bench press", "push-ups", "dumbbells", "dips"]]
+    var arrayMuscle = ["Breast", "Back", "Legs", "Shoulders", "Biceps", "Triceps", "Abs"]
     
     var body: some View {
         ZStack(alignment: .bottom){
@@ -53,7 +59,7 @@ struct FirstView: View {
                 Button {
                     vm.getAllWorkOut()
                     showView.toggle()
-                    //                    vm.deleteAllData()
+//                    vm.deleteAllData()
                 } label: {
                     Text("open")
                         .frame(width: 200, height: 40, alignment: .center)
@@ -82,10 +88,10 @@ struct FirstView: View {
     }
     
     func createMuscleGroupList() {
-        for i in 0 ... array2.count - 1 {
-            let musclgrouplist = vm.saveMuscleGroupList(name: array2[i], workOut: vm.workOutCurrent!)
-            for j in 0 ... array.count - 1 {
-                vm.saveExerciseList(name: array[j], muscleGroup: musclgrouplist)
+        for j in 0 ... arrayMuscle.count - 1 {
+            let musclgrouplist = vm.saveMuscleGroupList(name: arrayMuscle[j], workOut: vm.workOutCurrent!)
+            for k in 0 ... arrayExercise[j].count  - 1 {
+                vm.saveExerciseList(name: arrayExercise[j][k], muscleGroup: musclgrouplist)
             }
         }
     }

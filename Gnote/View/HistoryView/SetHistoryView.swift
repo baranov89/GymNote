@@ -14,6 +14,7 @@ struct SetHistoryView: View {
     var body: some View {
         VStack{
             VStack{
+                
                 HStack{
                     Button {
                         withAnimation(.easeOut) {
