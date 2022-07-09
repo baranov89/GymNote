@@ -15,7 +15,7 @@ struct FirstView: View {
     @State var moveToMainView: Bool = false
     
     var date = Date()
-    var arrayExercise: [[String]] = [["bench press", "incline bench press", "push-ups", "dumbbells", "dips"],
+    var arrayExercise: [[String]] = [["bench press", "incline bench press", "push-ups", "dumbbells", "dips", "dips", "dips", "dips", "dips"],
                                      ["bench press", "incline bench press", "push-ups", "dumbbells", "dips"],
                                      ["bench press", "incline bench press", "push-ups", "dumbbells", "dips"],
                                      ["bench press", "incline bench press", "push-ups", "dumbbells", "dips"],

@@ -23,8 +23,7 @@ struct TrainigView: View {
     var d: [String] = ["qwe"]
     
     var body: some View {
-        VStack{
-            
+        VStack(spacing: 0){
             HStack{
                 Text("Wednesday, ")
                     .font(.system(size: 22, weight: .light, design: .rounded))
@@ -34,7 +33,12 @@ struct TrainigView: View {
                 Spacer()
             }
             .padding(.top, 20)
+            Divider()
+                .padding(.top, 15)
+                .padding(.bottom, 20)
             TrainingViewMusclGroup(vm: vm, muscleArray: $musculGroupArray, selectedGroup: $selectedGroup, updateMuscleGroupView: $updateMuscleGroupView)
+            Divider()
+                .padding(.top, 20)
             ScrollView(.horizontal, showsIndicators: false)
             {
                 ScrollViewReader(content: { proxy in
@@ -54,7 +58,7 @@ struct TrainigView: View {
                         .frame(width: UIScreen.main.bounds.width)
                     }
                 }
-                .background(Color.gray.opacity(0.2))
+//                .background(Color.gray.opacity(0.2))
                 .onChange(of: selectedGroup, perform: { value in
                     withAnimation {
                         proxy.scrollTo(value, anchor: .trailing)

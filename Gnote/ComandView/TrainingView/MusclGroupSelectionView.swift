@@ -94,7 +94,6 @@ struct MusclGroupSelectionView: View {
                     }
                     .frame(width: UIScreen.main.bounds.width)
                 }
-                
             }
             .overlay(
                 RoundedRectangle(cornerRadius: 0)

@@ -12,31 +12,25 @@ struct ChangeDataView: View {
     @State var togglyExercise: Bool = false
     @State var togglyMuscleGroup: Bool = false
     @State var selectedMuscle: String = ""
-    @State var selectedData: String = "Muscle group"
+    @State var selectedData: SelectedDataEnum = .muscle
     @State var muscleListArray: [MuscleGroupList] = []
     @State var exerciseArray: [ExerciseList] = []
     @State var selectedIcon = "plus.circle"
+    @State var triger: Bool = false
     
     var body: some View {
         VStack{
-            HStack{
-                Text("Change data")
-                Spacer()
-            }
-            .font(.system(size: 22, weight: .light, design: .rounded))
-            .padding(.leading , 20)
-            .padding(.top, 20)
+            TopTitleView(selectedIcon: $selectedIcon)
             Divider()
             VStack{
                 SelectedChangeDataView(muscleListArray: $muscleListArray, selectedData: $selectedData, selectedMuscle: $selectedMuscle, exerciseArray: $exerciseArray)
             }
-            Divider()
             HStack {
-                IconView(selectedIcon: $selectedIcon)
+                IconView(selectedIcon: $selectedIcon, selectedMuscle: $selectedMuscle, selectedData: $selectedData, triger: $triger)
             }
-            .padding(.vertical, 20)
-            Divider()
-            ArrayDataView(vm: vm, selectedMuscle: $selectedMuscle, selectedData: $selectedData, selectedIcon: $selectedIcon)
+            .padding(.vertical, 5)
+            ArrayData(vm: vm, selectedMuscle: $selectedMuscle, selectedData: $selectedData, selectedIcon: $selectedIcon, triger: $triger)
+                .padding(.top, 10)
             Spacer()
         }
         .onAppear{
@@ -70,5 +64,28 @@ struct ChangeDataView: View {
         }
     }
     
-    
+    func getTitle() -> String {
+        var title = ""
+        switch selectedIcon {
+        case "plus.circle":
+            title = "Add data"
+        case "pencil.circle":
+            title = "Change data"
+        case "trash.circle":
+            title = "Delete data"
+        default:
+            break
+        }
+        return title
+    }
+}
+
+enum SelectedDataEnum {
+    case muscle, exercise
+    var category: String {
+        switch self {
+        case .muscle: return "Muscle group"
+        case .exercise: return "Exercise"
+        }
+    }
 }

@@ -18,6 +18,8 @@ struct ExerciseScrollView: View {
     @State var selectedIndex: [Int] = []
     @State var workOutPush: [Int] = []
     
+    @State var triger: Bool = false
+    
     var body: some View {
         VStack{
             ScrollView(.vertical, showsIndicators: false) {
@@ -28,7 +30,6 @@ struct ExerciseScrollView: View {
                                 Text("\(indexWorkOut + 1)")
                                     .frame(width: 20)
                                     .padding(.leading, 10)
-//                                    .padding(.trailing, 10)
                                 Text(getDate(date: (workOutFiltered[indexWorkOut].date!), object: "dayOfWeek") + ",")
                                 Text(getDate(date: (workOutFiltered[indexWorkOut].date!), object: "dayNumber"))
                                 Text(getDate(date: (workOutFiltered[indexWorkOut].date!), object: "month"))
@@ -74,12 +75,14 @@ struct ExerciseScrollView: View {
                                     }
                                 }
                             }
+                                
                         }
                         .background(.white)
                         .onTapGesture {
                             if !workOutPush.contains(indexWorkOut) {
-                                selectedIndex.append(indexWorkOut)
-                                workOutPush.append(indexWorkOut)
+                                    selectedIndex.append(indexWorkOut)
+                                    workOutPush.append(indexWorkOut)
+                                
                             } else {
                                 for i in workOutPush.indices {
                                     if workOutPush[i] == indexWorkOut {
@@ -91,6 +94,7 @@ struct ExerciseScrollView: View {
                                     if selectedIndex[i] == indexWorkOut {
                                         selectedIndex.remove(at: i)
                                         break
+                                            
                                     }
                                 }
                             }

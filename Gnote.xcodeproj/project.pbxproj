@@ -31,6 +31,9 @@
 		792D7D3D28707DAE006D2E64 /* YearsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D7D3C28707DAE006D2E64 /* YearsView.swift */; };
 		792D7D3F28707DCA006D2E64 /* MonthsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D7D3E28707DCA006D2E64 /* MonthsView.swift */; };
 		792D7D4128707DE8006D2E64 /* MusclesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D7D4028707DE8006D2E64 /* MusclesView.swift */; };
+		7931F9852879391100C02CE5 /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7931F9842879391100C02CE5 /* ExerciseListView.swift */; };
+		7931F9872879532F00C02CE5 /* ArrayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7931F9862879532F00C02CE5 /* ArrayData.swift */; };
+		7931F9892879784500C02CE5 /* TopTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7931F9882879784500C02CE5 /* TopTitleView.swift */; };
 		793B5A3028748C98007C03DE /* ExerciseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B5A2F28748C98007C03DE /* ExerciseScrollView.swift */; };
 		793B5A3228753B56007C03DE /* SetHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B5A3128753B56007C03DE /* SetHistoryView.swift */; };
 		79BD44B52876A175003ACCE0 /* ChangeDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BD44B42876A175003ACCE0 /* ChangeDataView.swift */; };
@@ -66,6 +69,9 @@
 		792D7D3C28707DAE006D2E64 /* YearsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearsView.swift; sourceTree = "<group>"; };
 		792D7D3E28707DCA006D2E64 /* MonthsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsView.swift; sourceTree = "<group>"; };
 		792D7D4028707DE8006D2E64 /* MusclesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusclesView.swift; sourceTree = "<group>"; };
+		7931F9842879391100C02CE5 /* ExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListView.swift; sourceTree = "<group>"; };
+		7931F9862879532F00C02CE5 /* ArrayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayData.swift; sourceTree = "<group>"; };
+		7931F9882879784500C02CE5 /* TopTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTitleView.swift; sourceTree = "<group>"; };
 		793B5A2F28748C98007C03DE /* ExerciseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseScrollView.swift; sourceTree = "<group>"; };
 		793B5A3128753B56007C03DE /* SetHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetHistoryView.swift; sourceTree = "<group>"; };
 		79BD44B42876A175003ACCE0 /* ChangeDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDataView.swift; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 				4E39B562280F3C6E006A5AD1 /* CustomTabBarView.swift */,
 				4E7F250C2816DAF70051BA59 /* TapBarItemsPreferenceKey.swift */,
 				4E7F250E2816E27A0051BA59 /* TabBarItem.swift */,
+				4E7ABA932808346500333E59 /* WorkoutSelectionView.swift */,
 				79BD44B62876A179003ACCE0 /* ChangeDataView */,
 				792D7D39286F2969006D2E64 /* HistoryView */,
 				79104119284A95D500C51528 /* TrainingView */,
@@ -166,7 +173,6 @@
 				4E0F1D8F281C215300C3F441 /* TrainigView.swift */,
 				4EC5A19928185F7B000F814B /* UpperView.swift */,
 				4E6B49D02822997A00CB5002 /* MusclGroupSelectionView.swift */,
-				4E7ABA932808346500333E59 /* WorkoutSelectionView.swift */,
 			);
 			path = TrainingView;
 			sourceTree = "<group>";
@@ -188,6 +194,9 @@
 			isa = PBXGroup;
 			children = (
 				79BD44B42876A175003ACCE0 /* ChangeDataView.swift */,
+				7931F9882879784500C02CE5 /* TopTitleView.swift */,
+				7931F9862879532F00C02CE5 /* ArrayData.swift */,
+				7931F9842879391100C02CE5 /* ExerciseListView.swift */,
 				79BD44BD2877376A003ACCE0 /* SelectedChangeDataView.swift */,
 				79BD44BF28774112003ACCE0 /* ArrayDataView.swift */,
 				79BD44BB287736C1003ACCE0 /* IconView.swift */,
@@ -279,8 +288,11 @@
 				793B5A3028748C98007C03DE /* ExerciseScrollView.swift in Sources */,
 				79BD44B52876A175003ACCE0 /* ChangeDataView.swift in Sources */,
 				79BD44C028774112003ACCE0 /* ArrayDataView.swift in Sources */,
+				7931F9872879532F00C02CE5 /* ArrayData.swift in Sources */,
 				792D7D3D28707DAE006D2E64 /* YearsView.swift in Sources */,
+				7931F9852879391100C02CE5 /* ExerciseListView.swift in Sources */,
 				4E1B33EC2815C44C005DEABD /* CustomTabBarCintainerView.swift in Sources */,
+				7931F9892879784500C02CE5 /* TopTitleView.swift in Sources */,
 				4E9F6B0427FE103B00B5AD29 /* CoreDataManager.swift in Sources */,
 				4E9F6B0627FF59DC00B5AD29 /* CoreDataRaelationShipViewModel.swift in Sources */,
 				792D7D38286F2960006D2E64 /* HistoryView.swift in Sources */,

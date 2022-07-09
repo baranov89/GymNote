@@ -28,6 +28,9 @@ struct SetHistoryView: View {
                     Spacer()
                 }
                 VStack{
+                    Text((selectedMusleGroup?.name)!)
+                        .font(.system(size: 30, weight: .light, design: .rounded))
+                        .padding(.vertical, 10)
                     HStack{
                         Text(getDate(date: (selectedMusleGroup?.workOutRS!.date)!, object: "dayOfWeek") + ",")
                         Text(getDate(date: (selectedMusleGroup?.workOutRS!.date)!, object: "dayNumber"))
@@ -35,10 +38,9 @@ struct SetHistoryView: View {
                         Text(getDate(date: (selectedMusleGroup?.workOutRS!.date)!, object: "year"))
                     }
                         .font(.system(size: 15, weight: .light, design: .rounded))
-                        .padding(.top, 20)
+//                        .padding(.top, 20)
                         .padding(.bottom, 10)
-                    Text((selectedMusleGroup?.name)!)
-                        .font(.system(size: 30, weight: .light, design: .rounded))
+                    
                 }
             }
             .padding(.top, 55)
@@ -104,9 +106,7 @@ struct SetHistoryView: View {
                                                     }
                                                     .id(setOne)
                                                     .foregroundColor(.black)
-//                                                    .padding(.vertical, 12)
                                                     .padding(.horizontal, 12)
-//                                                    .padding(.bottom, setOne == ((exercise.powerSetRS?.allObjects as? [PowerSet])!).sorted(by: {$0.set < $1.set}).last() ? 40 : 12)
                                                 }
                                             }
                                         })

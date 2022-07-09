@@ -9,8 +9,28 @@ import SwiftUI
 
 struct IconView: View {
     @Binding var selectedIcon: String
+    @Binding var selectedMuscle: String
+    @Binding var selectedData: SelectedDataEnum
+    @Binding var triger: Bool
     
     var body: some View {
+        Button {
+            selectedData = .muscle
+            withAnimation(.easeInOut) {
+                triger = false
+            }
+//            selectedMuscle = ""
+            
+        } label: {
+            Image(systemName: "arrow.backward.square")
+                .font(.system(size: 40, weight: .thin, design: .rounded))
+//                .resizable()
+//                .frame(width: 40, height: 40)
+                .padding(.leading, 20)
+                .foregroundColor( triger  ? .blue : .gray.opacity(0.3))
+                
+        }
+        
         Spacer()
         Image(systemName: "pencil.circle")
             .resizable()
@@ -27,15 +47,15 @@ struct IconView: View {
             .onTapGesture {
                 selectedIcon = "plus.circle"
             }
-            
+        
         Image(systemName: "trash.circle")
-        .resizable()
+            .resizable()
             .frame(width: 40, height: 40)
             .foregroundColor(selectedIcon == "trash.circle" ? .red : .gray.opacity(0.3))
+            .padding(.trailing, 20)
             .onTapGesture {
                 selectedIcon = "trash.circle"
             }
-        Spacer()
     }
 }
 

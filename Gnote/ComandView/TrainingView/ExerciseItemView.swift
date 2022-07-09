@@ -64,7 +64,11 @@ struct ExerciseItemView: View {
             }
             .frame(width: UIScreen.main.bounds.width - 40, height: 80, alignment: .leading)
             .background(Color.white)
-            .cornerRadius(20)
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)), lineWidth: 0.5)
+            )
+
         }
     }
     
@@ -127,9 +131,3 @@ struct ExerciseItemView: View {
         vm.saveExerciseList(name: exercise.name!, muscleGroup: muscleGroupList!)
     }
 }
-
-//struct ExerciseItemView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ExerciseItemView()
-//    }
-//}
