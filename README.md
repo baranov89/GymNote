@@ -8,6 +8,7 @@ With GymNote, you can view your workout history, analyze your progress, and set 
 GymNote is an essential tool for those who want to monitor their physical condition and achieve new results in sports.
 
 Stack: SwiftUI, CoreData
+
 ![Image alt](https://github.com/baranov89/GymNote/blob/main/Gym1.png)
 ![Image alt](https://github.com/baranov89/GymNote/blob/main/Gym2.png)
 ![Image alt](https://github.com/baranov89/GymNote/blob/main/Gym3.png)
